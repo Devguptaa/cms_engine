@@ -1,0 +1,52 @@
+<%= form_with(model: content) do |form| %>
+  <% if content.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+        <% content.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Author, style: "display: block" %>
+    <%= form.text_field :Author %>
+  </div>
+
+  <div>
+    <%= form.label :Title, style: "display: block" %>
+    <%= form.text_field :Title %>
+  </div>
+
+  <div>
+    <%= form.label :Body, style: "display: block" %>
+    <%= form.text_field :Body %>
+  </div>
+
+  <div>
+    <%= form.label :Product, style: "display: block" %>
+    <%= form.text_field :Product %>
+  </div>
+
+  <div>
+    <%= form.label :Description, style: "display: block" %>
+    <%= form.text_field :Description %>
+  </div>
+
+  <div>
+    <%= form.label :Manufacturer, style: "display: block" %>
+    <%= form.text_field :Manufacturer %>
+  </div>
+
+  <div>
+    <%= form.label :Price, style: "display: block" %>
+    <%= form.text_field :Price %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
